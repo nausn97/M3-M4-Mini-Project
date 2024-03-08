@@ -1,0 +1,48 @@
+package_name: stroke_prediction
+training_data_file: healthcare-dataset-stroke-data.csv
+test_data_file: test_healthcare-dataset-stroke-data.csv
+target: stroke
+pipeline_name: stroke_model_pipeline
+pipeline_save_file: stroke_model_output_v_
+test_size: 0.2
+random_state: 42
+cv: 5
+n_estimators: 150
+max_depth: 5
+
+
+features:
+  - gender
+  - age
+  - hypertension
+  - heart_disease
+  - ever_married
+  - work_type
+  - Residence_type
+  - avg_glucose_level
+  - bmi
+  - smoking_status
+
+categorical_features:
+  - gender
+  - ever_married
+  - work_type
+  - Residence_type
+  - smoking_status
+
+numerical_features:
+  - age
+  - avg_glucose_level
+  - bmi
+
+unused_features:
+  - id
+
+gender_mapping:
+  male: 1
+  female: 0
+
+ever_married:
+  YES: 1
+  NO: 0
+
